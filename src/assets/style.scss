@@ -1,0 +1,93 @@
+$dark-blue: #476a6f;
+$light-blue: #258ea6;
+$dark-green: #519e8a;
+$medium-green: #7eb09b;
+$light-green: #a3c4bc;
+$white: #fff;
+$black: #111;
+
+.wrapper {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: $light-blue;
+}
+
+.enter {
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 40px;
+	border-radius: 10px;
+	box-shadow: 0 10px 50px #555;
+	background-color: $white;
+	h1 {
+		text-align: center;
+		color: $black;
+		font-weight: bold;	
+		font-size: 24px;
+		margin-bottom: 30px;
+	}
+}
+
+.enter__login, .enter__password {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+	width: 100%;
+}
+
+.enter__label {
+	font-size: 18px;
+	margin-bottom: 5px;
+	color: $black;
+}
+
+.enter__input {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid $black;
+}
+
+.enter__btn {
+	width: 100%;
+	background-color: $light-green;
+	color: $black;
+	font-size: 14px;
+	font-weight: bold;
+	height: 40px;
+	cursor: pointer;
+}
+
+.enter__btn:hover {
+	background-color: $dark-green;
+}
+
+.admin {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 768px;
+	height: 100vh;
+	// overflow: hidden;
+	margin: 0 auto;
+}
+
+.board {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 200px;
+	background-color: $dark-blue;
+	padding: 15px;
+}
+
+.card {
+	padding: 15px 25px;
+	background-color: $white;
+	cursor: pointer;
+	margin-bottom: 15px;
+}

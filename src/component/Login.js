@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../assets/style.scss';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { logIn } from '../actions/index';
@@ -39,7 +40,7 @@ class Login extends Component {
 
     render() {
         const { location, errorMsg } = this.props
-        const { from } = location.state || { from: { pathname: '/' } }
+        const { from } = location.state || { from: { pathname: '/admin' } }
         const { username, password, redirectToPreviousRoute } = this.state
 
         if (redirectToPreviousRoute) {
@@ -47,9 +48,9 @@ class Login extends Component {
         }
         return (
             <div className="wrapper">
-                {errorMsg && <p>{errorMsg}</p>}
                 <div className="enter">
                     <h1>Log in</h1>
+                    {errorMsg && <p>{errorMsg}</p>}
                     <form className="form-login" onSubmit={this.handleSubmit}>
                     <div className="enter__login">
                         <label htmlFor="username" className="enter__label">Login</label>
