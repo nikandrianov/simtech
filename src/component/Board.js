@@ -22,4 +22,4 @@ function Board(props) {
     );
   }
   
-  export default Board;
+export default Board;
