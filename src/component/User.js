@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/style.scss';
 import { connect } from 'react-redux';
+import ProfileUser from './ProfileUser';
 
 class User extends Component {
     render() {
@@ -11,6 +12,7 @@ class User extends Component {
                     <div className="user__loguser">
                         <h2>Профиль</h2>
                         <p>Вас зовут: <span>{user.name}</span></p>
+                        <ProfileUser />
                     </div>
                 </div>
             </div>

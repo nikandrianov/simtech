@@ -10,7 +10,17 @@ export function logIn(params, cb) {
           },
         })
         cb()
-      } else {
+      } 
+      else if (checkCredentialsUser(params)) {
+        dispatch({
+          type: LOG_IN,
+          payload: {
+            name: params.username,
+          },
+        })
+        cb()
+      }
+      else {
         dispatch({
           type: LOG_ERR,
           payload: {
@@ -27,4 +37,11 @@ export function checkCredentials(params) {
       return false
     }
     return true
+}
+
+export function checkCredentialsUser(params) {
+  if (params.username.toLowerCase() !== 'user' || params.password !== '123') {
+    return false
+  }
+  return true
 }

@@ -117,6 +117,11 @@ table, th, td {
 	border-radius: 10px;
 }
 
+.table {
+	height: 80vh;
+	padding: 5px;
+}
+
 .table__table {
 	width: 100%;
 	.table__th {
@@ -129,4 +134,43 @@ table, th, td {
 		height: 35px;
 		font-size: 16px;
 	}
+}
+
+.user {
+	background-color: $light-blue;
+	padding: 10px;
+	height: 100vh;
+}
+
+.user__loguser {
+	margin-bottom: 20px;
+	font-size: 16px;
+	text-align: center;
+	padding: 15px;
+	p {
+		span {
+			font-weight: 700;
+		}
+	}
+}
+
+.profile {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 35px;
+	height: 100%;
+}
+
+.profile__foto {
+	width: 200px;
+	img {
+		width: 100%;
+	}
+}
+
+.profile__data {
+	width: 400px;
+	text-align: left;
+	font-size: 16px;
+	line-height: 30px;
 }

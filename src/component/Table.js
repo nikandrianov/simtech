@@ -10,11 +10,14 @@ const SortableList = SortableContainer(({items}) => {
   return (
       <div className="table">
       {items.map((value, index) => (
-          <table className="table__table">
+          <table className="table__table" key={value.id}>
+              <thead>
                 <tr className="table__tr">
                     <th className="table__th">ФИО</th>
                     <th className="table__th">Отдел</th>
                 </tr>
+              </thead>
+              <tbody>
                 <tr className="table__tr">
                     <td className="table__td">
                         {value.name}
@@ -23,6 +26,7 @@ const SortableList = SortableContainer(({items}) => {
                         <SortableItem key={`item-${value.id}`} index={index} value={value.department} />
                     </td>
                   </tr>
+              </tbody>
           </table>
       ))}
       </div>

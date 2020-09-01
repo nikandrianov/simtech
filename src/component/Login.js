@@ -39,18 +39,21 @@ class Login extends Component {
     }
 
     render() {
-        const { location, errorMsg } = this.props
-        const { from } = location.state || { from: { pathname: '/admin' } }
+        const { errorMsg } = this.props
+        // const { from } = location.state || { from: { pathname: '/admin' } }
+        // const { fromUser } = location.state || { from: { pathname: '/user' } }
         const { username, password, redirectToPreviousRoute } = this.state
 
-        if (redirectToPreviousRoute) {
-        return <Redirect to={from} />
+        if (redirectToPreviousRoute && username === 'admin') {
+            return <Redirect to="/admin" />
+        }
+        else if (redirectToPreviousRoute && username === 'user') {
+            return <Redirect to="/user" />
         }
         return (
             <div className="wrapper">
                 <div className="enter">
                     <h1>Log in</h1>
-                    {errorMsg && <p>{errorMsg}</p>}
                     <form className="form-login" onSubmit={this.handleSubmit}>
                     <div className="enter__login">
                         <label htmlFor="username" className="enter__label">Login</label>
@@ -60,6 +63,7 @@ class Login extends Component {
                         <label htmlFor="password" className="enter__label">Password</label>
                         <input type="password" className="enter__input" name="password" placeholder="password" onChange={this.handleChange} value={password} data-field-name="password"/>
                     </div>
+                    {errorMsg && <p>{errorMsg}</p>}<br />
                     <div className="enter__button">
                         <button type="submit" className="enter__btn">Sign up</button>
                     </div>
