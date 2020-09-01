@@ -1,28 +1,22 @@
 import React from 'react';
 import './App.scss';
+import Login from './component/Login';
+import Admin from './component/Admin';
+import PrivateRoute from './containers/PrivateRoute';
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import User from './component/User';
 
 function App() {
   return (
-    <div className="App">
-      <div className="wrapper">
-          <div className="enter">
-            <h1>Log in</h1>
-            <form className="form-login" noValidate>
-              <div className="enter__login">
-                <label htmlFor="username" className="enter__label">Login</label>
-                <input type="text" className="enter__input" name="username" placeholder="login" noValidate/>
-              </div>
-              <div className="enter__password">
-                <label htmlFor="password" className="enter__label">Password</label>
-                <input type="password" className="enter__input" name="password" placeholder="password" noValidate/>
-              </div>
-              <div className="enter__button">
-                <button type="submit" className="enter__btn">Sign up</button>
-              </div>
-            </form>
-          </div>
+    <HashRouter>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <PrivateRoute path="/admin" component={Admin}/>
+          <PrivateRoute path="/user" component={User}/>
+        </Switch>
       </div>
-    </div>
+    </HashRouter>
   );
 }
 
