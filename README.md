@@ -1,3 +1,7 @@
+## Данные для входа:
+admin/12345
+user/123
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
